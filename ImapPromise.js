@@ -22,6 +22,7 @@ function connectAsync(){
 	return new Promise(function(yay,nay){
 		imap.on('ready',yay);
 		imap.connect();
+		imap.on('error',nay)
 	});
 }
 function openBoxAsync(name,readOnly){
